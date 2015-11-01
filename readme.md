@@ -62,3 +62,7 @@ $ tree -L 1
 lotusは[クリーンアーキテクチャ](http://blog.tai2.net/the_clean_architecture.html)に強く影響を受けている。
 
 ---
+
+## テストを書きながらappsをめぐる
+
+---
