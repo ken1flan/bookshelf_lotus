@@ -29,7 +29,18 @@ $ lotus new bookshelf --database=postgres
 
 ---
 
-### ディレクトリ構造
+### gemのインストールと起動
+
+```
+$ bundle install
+$ lotus server
+```
+
+![lotus server](http://f.st-hatena.com/images/fotolife/k/ken1flan/20151101/20151101192012.png?1446373257)
+
+---
+
+## Lotusのアーキテクチャ
 
 ```
 $ cd bookshelf
@@ -46,15 +57,8 @@ $ tree -L 1
 └── spec
 ```
 
----
-
-### gemのインストールと起動
-
-```
-$ bundle install
-$ lotus server
-```
-
-![lotus server](http://f.st-hatena.com/images/fotolife/k/ken1flan/20151101/20151101192012.png?1446373257)
+`apps`以下にアプリケーション。Webインターフェイスや管理者ペイン、HTTP APIなどなど。
+`lib`以下にビジネスロジック。モデルやプロダクトとして提供される機能など。
+lotusは[クリーンアーキテクチャ](http://blog.tai2.net/the_clean_architecture.html)に強く影響を受けている。
 
 ---
