@@ -18,7 +18,43 @@
 
 ## インストールと新規プロジェクトの作成
 
+---
+
+### インストールと新規プロジェクトの作成
+
 ```
 $ gem install lotusrb
 $ lotus new bookshelf --database=postgres
 ```
+
+---
+
+### ディレクトリ構造
+
+```
+$ cd bookshelf
+$ tree -L 1
+.
+├── Gemfile
+├── Rakefile
+├── apps
+├── config
+├── config.ru
+├── db
+├── lib
+├── readme.md
+└── spec
+```
+
+---
+
+### gemのインストールと起動
+
+```
+$ bundle install
+$ lotus server
+```
+
+![lotus server](http://f.st-hatena.com/images/fotolife/k/ken1flan/20151101/20151101192012.png?1446373257)
+
+---
