@@ -66,3 +66,19 @@ lotusは[クリーンアーキテクチャ](http://blog.tai2.net/the_clean_archi
 ## テストを書きながらappsをめぐる
 
 ---
+
+### ホームを訪れた場合のテスト
+
+```
+# spec/web/features/visit_home_spec.rb
+
+require 'features_helper'
+
+describe 'Visit home' do
+  it 'is successfull' do
+    visit '/'
+
+    page.body.must_include 'Bookshelf'
+  end
+end
+```
