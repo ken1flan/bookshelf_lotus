@@ -192,3 +192,18 @@ end
 ```
 
 ---
+
+### ジェネレータ
+
+```
+$ lotus generate action web books#index
+      insert  apps/web/config/routes.rb
+      create  spec/web/controllers/books/index_spec.rb
+      create  apps/web/controllers/books/index.rb
+      create  apps/web/views/books/index.rb
+      create  apps/web/templates/books/index.html.erb
+      create  spec/web/views/books/index_spec.rb
+$
+```
+
+---
