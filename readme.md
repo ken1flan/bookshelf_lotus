@@ -113,3 +113,18 @@ end
 * ページごとにコントローラがいるカンジかしら。
 
 ---
+
+### ビュー
+
+```
+# apps/web/views/home/index.rb
+module Web::Views::Home
+  class Index
+    include Web::Views
+  end
+end
+```
+
+ * テンプレートとビューが分かれています。
+
+ ---
