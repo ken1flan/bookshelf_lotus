@@ -128,3 +128,12 @@ end
  * テンプレートとビューが分かれています。
 
  ---
+
+### テンプレート
+
+```
+# apps/web/templates/home/index.html.erb
+<h1>Bookshelf</h1>
+```
+
+---
