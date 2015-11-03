@@ -246,3 +246,11 @@ Finished in 0.039437s, 101.4278 runs/s, 126.7847 assertions/s.
 4 runs, 5 assertions, 0 failures, 0 errors, 0 skips
 $
 ```
+
+---
+
+### ブラウザで確認
+
+![http://localhost:2300/books](http://f.st-hatena.com/images/fotolife/k/ken1flan/20151103/20151103212533.png?1446553549)
+
+---
