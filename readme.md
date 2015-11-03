@@ -127,13 +127,32 @@ end
 
  * テンプレートとビューが分かれています。
 
- ---
+---
 
 ### テンプレート
 
 ```
 # apps/web/templates/home/index.html.erb
 <h1>Bookshelf</h1>
+```
+
+---
+
+### テストグリーン
+
+```
+$ rake test
+Run options: --seed 29710
+
+# Running:
+
+.
+
+Finished in 0.018290s, 54.6734 runs/s, 109.3469 assertions/s.
+
+1 runs, 2 assertions, 0 failures, 0 errors, 0 skips
+✔ ~/src/bookshelf_lotus [master ↑·5|✔]
+$
 ```
 
 ---
