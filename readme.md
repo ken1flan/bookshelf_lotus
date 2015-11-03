@@ -230,3 +230,19 @@ $
 ```
 
 ---
+
+### テストグリーン
+
+```
+$ rake test
+Run options: --seed 6084
+
+# Running:
+
+....
+
+Finished in 0.039437s, 101.4278 runs/s, 126.7847 assertions/s.
+
+4 runs, 5 assertions, 0 failures, 0 errors, 0 skips
+$
+```
