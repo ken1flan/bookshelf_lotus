@@ -82,3 +82,16 @@ describe 'Visit home' do
   end
 end
 ```
+
+---
+
+### ルーティング
+
+```
+# apps/web/config/routes.rb
+get '/', to: 'home#index'
+```
+
+* アプリケーションの下にルーティング設定がありますね。
+
+---
