@@ -167,3 +167,28 @@ Lotusはコンテナアーキテクチャをデフォルト採用している。
 
 Lotusのコアフレームワークは、コンテナの起動時に複製され、
 それぞれ別のアプリケーション向けにされた設定を邪魔することがありません。
+
+---
+
+## 新しいアクションを作る
+
+---
+
+### テスト
+
+```
+# spec/web/features/list_books_spec.rb
+require 'features_helper'
+
+describe 'List books' do
+  it 'displays each book on the page' do
+    visit '/books'
+
+    within '#books' do
+      assert page.has_css?('.book', count: 2), "Expected to find 2 books"
+    end
+  end
+end
+```
+
+---
