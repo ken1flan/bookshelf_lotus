@@ -249,8 +249,27 @@ $
 
 ---
 
+### レイアウト
+
+`apps/web/templates/application.html.erb`
+
+```
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bookshelf</title>
+  </head>
+  <body>
+    <h1>Bookshelf</h1>
+    <%= yield %>
+  </body>
+</html>
+```
+
+---
+
 ### ブラウザで確認
 
-![http://localhost:2300/books](http://f.st-hatena.com/images/fotolife/k/ken1flan/20151103/20151103212533.png?1446553549)
+![http://localhost:2300/books](http://f.st-hatena.com/images/fotolife/k/ken1flan/20151104/20151104073423.png?1446590082)
 
 ---
