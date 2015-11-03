@@ -207,3 +207,26 @@ $
 ```
 
 ---
+
+### books/index.html.erbの編集
+
+`apps/web/templates/books/index.html.erb`
+
+```
+<h1>Bookshelf</h1>
+<h2>All books</h2>
+
+<div id="books">
+  <div class="book">
+    <h3>Patterns of Enterprise Appilcation Architecture</h3>
+    <p>by <strong>Martin Fowler</strong></p>
+  </div>
+
+  <div class="book">
+    <h3>Test Driven Development</h3>
+    <p>by <strong>Kent Bech</strong></p>
+  </div>
+</div>
+```
+
+---
