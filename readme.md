@@ -273,3 +273,23 @@ $
 ![http://localhost:2300/books](http://f.st-hatena.com/images/fotolife/k/ken1flan/20151104/20151104073423.png?1446590082)
 
 ---
+
+## エンティティでデータをモデリングする
+
+---
+
+### モデルジェネレータ
+
+```
+$ lotus generate model book
+      create  lib/bookshelf/entities/book.rb
+      create  lib/bookshelf/repositories/book_repository.rb
+      create  spec/bookshelf/entities/book_spec.rb
+      create  spec/bookshelf/repositories/book_repository_spec.rb
+```
+
+* bookshelfとなっているところが、親ディレクトリ名になってるっぽい
+
+---
+
+### エンティティの役割
