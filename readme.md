@@ -319,3 +319,95 @@ end
 ---
 
 ### リポジトリを使う
+
+---
+
+#### .env でDB接続情報の管理
+
+今っぽく `.env` でDBの接続情報を管理しています。
+開発環境は`.env.development`、テスト環境は`.env.test`で管理されています。
+
+```
+# .env.development
+BOOKSHELF_DATABASE_URL="postgres://localhost/bookshelf_development"
+WEB_SESSIONS_SECRET="d019503e1799a381fd83511921ccba0cedc472954de5279e2058ca2a638ae64d"
+```
+
+---
+
+#### データベースの作成
+
+```
+$ lotus db create
+WARN: Unresolved specs during Gem::Specification.reset:
+      mime-types (< 3, >= 1.16)
+WARN: Clearing out unresolved specs.
+Please report a bug if this causes problems.
+$ psql -l
+                                          List of databases
+            Name            |  Owner   | Encoding |   Collate   |    Ctype    |   Access privileges   
+----------------------------+----------+----------+-------------+-------------+-----------------------
+ bookshelf_development      | ken1flan | UTF8     | ja_JP.UTF-8 | ja_JP.UTF-8 |
+   :
+   :
+```
+
+---
+
+#### DBスキーマの変更のためのマイグレーション
+
+```
+$ lotus generate migration create_books
+WARN: Unresolved specs during Gem::Specification.reset:
+      mime-types (< 3, >= 1.16)
+WARN: Clearing out unresolved specs.
+Please report a bug if this causes problems.
+      create  db/migrations/20151108095957_create_books.rb
+$
+```
+
+---
+
+```
+# db/migrations/20151108095957_create_books.rb
+Lotus::Model.migration do
+  change do
+    create_table :books do
+      primary_key :id
+      column :title, String, null: false
+      column :author, String, null: false
+    end
+  end
+end
+```
+
+---
+
+```
+$ lotus db migrate
+WARN: Unresolved specs during Gem::Specification.reset:
+      mime-types (< 3, >= 1.16)
+WARN: Clearing out unresolved specs.
+Please report a bug if this causes problems.
+✔ ~/src/bookshelf [master ↑·1|✚ 1…1]
+$
+```
+
+---
+
+(memo)なんかわかんないけど、一回失敗した…
+
+```
+$ lotus db migrate
+WARN: Unresolved specs during Gem::Specification.reset:
+      mime-types (< 3, >= 1.16)
+WARN: Clearing out unresolved specs.
+Please report a bug if this causes problems.
+ERROR:  relation "schema_migrations" does not exist at character 27
+STATEMENT:  SELECT NULL AS "nil" FROM "schema_migrations" LIMIT 1
+ERROR:  relation "schema_info" does not exist at character 27
+STATEMENT:  SELECT NULL AS "nil" FROM "schema_info" LIMIT 1
+$
+```
+
+---
