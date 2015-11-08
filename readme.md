@@ -411,3 +411,20 @@ $
 ```
 
 ---
+
+#### リポジトリで遊んでみる
+
+```
+$ lotus console
+irb(main):002:0> BookRepository.all
+=> []
+irb(main):003:0> book = Book.new(title: "TDD", author: "Kent Beck")
+=> #<Book:0x007fb5f5c49520 @title="TDD", @author="Kent Beck">
+irb(main):004:0> BookRepository.create(book)
+=> #<Book:0x007fb5f523b9c0 @title="TDD", @author="Kent Beck", @id=1>
+irb(main):005:0> BookRepository.find(1)
+=> #<Book:0x007fb5f522b318 @title="TDD", @author="Kent Beck", @id=1>
+irb(main):006:0>
+```
+
+---
