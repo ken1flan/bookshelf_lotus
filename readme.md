@@ -456,3 +456,29 @@ end
 ```
 
 ---
+
+#### テストDBのセットアップ
+
+```
+# Define ENV variables for test environment
+BOOKSHELF_DATABASE_URL="postgres://localhost/bookshelf_test"
+WEB_SESSIONS_SECRET="2f9352a64d07323b4491bff390a190ae1bb44b58deb67afa327d2c92ad5a0c1d"
+```
+
+```
+LOTUS_ENV=test lotus db prepare
+WARN: Unresolved specs during Gem::Specification.reset:
+      mime-types (< 3, >= 1.16)
+WARN: Clearing out unresolved specs.
+Please report a bug if this causes problems.
+ERROR:  database "bookshelf_test" does not exist
+STATEMENT:  DROP DATABASE bookshelf_test;
+ERROR:  relation "schema_migrations" does not exist at character 27
+STATEMENT:  SELECT NULL AS "nil" FROM "schema_migrations" LIMIT 1
+ERROR:  relation "schema_info" does not exist at character 27
+STATEMENT:  SELECT NULL AS "nil" FROM "schema_info" LIMIT 1
+✔ ~/src/bookshelf [master|✚ 1]
+$
+```
+
+…なんかエラーが。何度かやってるうちにできてた。ふーむ？
