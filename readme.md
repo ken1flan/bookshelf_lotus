@@ -528,3 +528,21 @@ end
 ---
 
 #### template の準備
+
+```
+# apps/web/templates/books/index.html.erb
+<h2>All books</h2>
+
+<% if books.any? %>
+  <% books.each do |book| %>
+    <div class="book">
+      <h2><%= book.title %></h2>
+      <p><%= book.author %></p>
+    </div>
+  <% end %>
+<% else %>
+  <p class="placeholder">There are no books yet.</p>
+<% end %>
+```
+
+#### controllerのテストの修正
