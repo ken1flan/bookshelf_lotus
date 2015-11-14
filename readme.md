@@ -579,3 +579,26 @@ end
 ---
 
 #### controllerの修正
+
+`books`をさらす(expose)でtemplateのほうで使えるようにしてるのかー。
+あと、`book`は`BookRepository`から受け取る、と。
+なるほどねぇ。
+
+```
+# apps/web/controllers/books/index.rb
+module Web::Controllers::Books
+  class Index
+    include Web::Action
+
+    expose :books
+
+    def call(params)
+      @books = BookRepository.all
+    end
+  end
+end
+```
+
+---
+
+#### ブラウザで見てみる
