@@ -637,3 +637,25 @@ describe 'Books' do
   assert page.has_content?('New book')
 end
 ```
+
+---
+
+#### フォームの基礎を作る
+
+```
+$ lotus generate action web books#new --url=/books/new
+      insert  apps/web/config/routes.rb
+      create  spec/web/controllers/books/new_spec.rb
+      create  apps/web/controllers/books/new.rb
+      create  apps/web/views/books/new.rb
+      create  apps/web/templates/books/new.html.erb
+      create  spec/web/views/books/new_spec.rb
+✔ ~/src/bookshelf [master ↑·1|✚ 1…5]
+$
+```
+
+`apps/web/config/routes.rb`にも一行追記されています。
+
+---
+
+#### フォームヘルパーを使う
