@@ -683,3 +683,31 @@ $
   end
 %>
 ```
+
+---
+
+### フォームをサブミットする
+
+```
+$ lotus generate action web books#create
+      insert  apps/web/config/routes.rb
+      create  spec/web/controllers/books/create_spec.rb
+      create  apps/web/controllers/books/create.rb
+      create  apps/web/views/books/create.rb
+      create  apps/web/templates/books/create.html.erb
+      create  spec/web/views/books/create_spec.rb
+```
+
+```
+$ git diff apps/web/config/routes.rb
+diff --git a/apps/web/config/routes.rb b/apps/web/config/routes.rb
+index e2ee699..b525441 100644
+--- a/apps/web/config/routes.rb
++++ b/apps/web/config/routes.rb
+@@ -1,3 +1,4 @@
++get '/books', to: 'books#create'
+ get '/books/new', to: 'books#new'
+ get '/books', to: 'books#index'
+ get '/', to: 'home#index'
+$
+```
