@@ -659,3 +659,27 @@ $
 ---
 
 #### フォームヘルパーを使う
+
+`apps/web/templates/books/new.html.erb`
+
+```
+<h2>Add book</h2>
+
+<%=
+  form_for *book, '/books' do
+    div class: 'input' do
+      label :text
+      text_field :title
+
+      div class: 'input' do
+        label :author
+        text_field :author
+      end
+
+      div class: 'controlls' do
+        submit 'Create book'
+      end
+    end
+  end
+%>
+```
